@@ -3,6 +3,7 @@ ARG VERSION=4.5.0.6
 RUN curl http://turnserver.open-sys.org/downloads/v${VERSION}/turnserver-${VERSION}-CentOS7.2-x86_64.tar.gz | tar -xz  && \
     cd turnserver-${VERSION} && \
     yum update && \
+    yum install hiredis && \
     yum install *.rpm
 
 VOLUME /etc/turnserver/
